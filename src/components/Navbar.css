@@ -1,0 +1,10 @@
+.navbar_title {
+    font-size: 40px;
+    padding: 10px;
+}
+
+.navbar_title:hover {
+    background-color: lightgrey;
+    border-radius: 5px 5px 5px 5px;
+    color: lightpink;
+}
