@@ -1,16 +1,6 @@
 import React from 'react';
-import { CardDeck, Card, Button } from 'react-bootstrap';
-
-
-// function makeUL(array) {
-//     let list = document.createElement('ul');
-//     for (let i = 0; i < array.length; i++) {
-//         let item = document.createElement('li');
-//         item.appendChild(document.createTextNode(array[i]));
-//         list.appendChild(item);
-//     }
-//     return list;
-// }
+import { CardDeck, Card, } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 function Lizt(props) {
     return (
@@ -24,13 +14,14 @@ function Lizt(props) {
                         <Card.Body>
                             <Card.Text>
                                 <ul>
-                                    <li>{props.items[0]}</li>
-                                    <li>{props.items[1]}</li>
-                                    <li>{props.items[2]}</li>
-                                    <li>{props.items[3]}</li>
+                                        {props.items.map((item) => {
+                                            return (
+                                                <li>{item}</li>
+                                            )
+                                        })}
                                 </ul>
                             </Card.Text>
-                            <Button variant="secondary">Go to Lizt</Button>
+                                <Link to={`/indvlizt/${props.title}`}>Go to '{props.title}'</Link>
                         </Card.Body>
                     </Card>
                 </Card.Body>
@@ -42,13 +33,14 @@ function Lizt(props) {
                         <Card.Body>
                             <Card.Text>
                                 <ul>
-                                    <li>{props.items[0]}</li>
-                                    <li>{props.items[1]}</li>
-                                    <li>{props.items[2]}</li>
-                                    <li>{props.items[3]}</li>
+                                        {props.items.map((item) => {
+                                            return (
+                                                <li>{item}</li>
+                                            )
+                                        })}
                                 </ul>
                             </Card.Text>
-                                <Button variant="secondary" href="/indvlizt" name="IndivLizt">Go to '{props.title}'</Button>
+                                <Link to={`/indvlizt/${props.title}`}>Go to '{props.title}'</Link>
                         </Card.Body>
                     </Card>
                 </Card.Body>
